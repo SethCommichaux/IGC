@@ -8,7 +8,7 @@ The IGC provides the representative sequences from gene clustering as a referenc
 python trace_cluster_generations.py
 ```
 
-This script creates two files: 1) edge_list.txt, which provides all pairwise relationships between the sequences used to create the IGC; 2) adjacency_list.txt, which provides an adjacency list for cluster membership in the IGC.
+This script creates two files: 1) edge_list.txt, which provides all representative-redundant sequence clustering relationships in the IGC; 2) adjacency_list.txt, which provides an adjacency list for cluster membership in the IGC.
 
 # Transitive clustering error analysis
 
