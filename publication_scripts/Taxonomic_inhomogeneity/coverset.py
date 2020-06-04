@@ -2,6 +2,7 @@ import sys
 
 diamond_results = sys.argv[1]
 
+# collect number of gene sequences in IGC cluster being analyzed
 gene_counts = len({k.strip().split('\t')[0]:0 for k in open(diamond_results)})
 cover_set = {}
 
