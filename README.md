@@ -1,7 +1,7 @@
 # IGC
-Data and code used for the critical analysis of the IGC
+Code used for the critical analysis of the IGC.
 
-# Foobar
+# Transitive clustering error
 
 Foobar is a Python library for dealing with word pluralization.
 
