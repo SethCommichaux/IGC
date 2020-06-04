@@ -1,7 +1,8 @@
 # Code used for the critical analysis of the IGC
+The Integrated Gene Catalog (IGC) is a set of nearly 10 million reference genes from the human gut microbiome.
 
 # Identifying all the cluster members of IGC representatives
-The IGC provides the representative sequences from gene clustering, however for our analysis we need all the cluster members that clustered to their representative sequences. These relationships can be determined from the CD-Hit clustering output files that the IGC author's provided (http://gigadb.org/dataset/100064) labelled as AGC.clstr, EGC.clst, CGC.clstr, SPGC.clstr, 3CGC.clstr and IGC.clstr. 
+The IGC provides the representative sequences from gene clustering as a reference database. For our analysis, however, we needed all the cluster members that clustered to their representative sequences. These relationships can be determined from the CD-Hit clustering output files that the IGC author's [provided](http://gigadb.org/dataset/100064) labelled as AGC.clstr, EGC.clst, CGC.clstr, SPGC.clstr, 3CGC.clstr and IGC.clstr. 
 
 # Transitive clustering error analysis
 
