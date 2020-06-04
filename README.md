@@ -18,4 +18,14 @@ To detect transitive clustering error in the IGC, 255,191 IGC gene clusters with
 python measure_TCE_IGC_clusters_50pident.py cdhit_gene_cluster_file.clstr
 ```
 
+## Taxonomic inhomogeneity
+
+To evaluate the taxonomic homogeneity within the actual IGC clusters, we aligned each sequence within a cluster with Diamond to the NCBI nr database (--query-cover 90 --id 95). We sampled 236 IGC clusters (the 104 largest clusters and 132 randomly chosen clusters with at least 100 sequences each). We inferred the number of species per gene cluster with two approaches: 1) Counting the number of species per cluster only using the top hit for each sequence; 2) identifying the smallest number of species such that each sequence had at least one significant Diamond hit to one of these species i.e. calculating the minimum set cover. Because calculating the minimum set cover is a NP-hard problem, we approximated the minimum set cover with a greedy approach using coverset.py. The input for this program is the Diamond output in format 6.
+
+```
+python coverset.py diamond_file.py
+```
+
+
+
 
