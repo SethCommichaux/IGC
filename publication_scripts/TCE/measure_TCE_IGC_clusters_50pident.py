@@ -7,21 +7,20 @@ def parse_clstr(x,out):
 	for i in open(x):
 		if i[0] == ">":
 			if mems != []:
-				out.write('<50\n')
-				mems = []
-				break
+				print('<50\n')
+				return None
+			else: continue
 		else:
 			if i.split('... ')[1].strip() == '*':
-				continue
+				mems.append(100.0)
 			else:
-				pident = i.strip().split('/')[-1].split('%')[0]
+				pident = float(i.strip().split('/')[-1].split('%')[0])
 				mems.append(pident)
 	if mems != []:
-		out.write(str(min(mems))+'\n')
+		print(min(mems)
 
 
-with open('min_clstr.txt','w') as out:
-	parse_clstr(clstr,out)
+parse_clstr(clstr,out)
 
 
 
