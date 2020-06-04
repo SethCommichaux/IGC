@@ -1,7 +1,10 @@
 # IGC
 Code used for the critical analysis of the IGC.
 
-# Transitive clustering error
+# Identifying all the cluster members of IGC representatives
+The IGC provides the representative sequences from gene clustering, however for our analysis we need all the cluster members that clustered to their representative sequences. These relationships can be determined from the CD-Hit clustering output files that the IGC author's [provided] (http://gigadb.org/dataset/100064). 
+
+# Transitive clustering error analysis
 
 Foobar is a Python library for dealing with word pluralization.
 
