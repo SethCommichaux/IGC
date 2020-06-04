@@ -9,6 +9,7 @@ def parse_clstr(x,out):
 			if mems != []:
 				out.write('<50\n')
 				mems = []
+				break
 		else:
 			if i.split('... ')[1].strip() == '*':
 				continue
