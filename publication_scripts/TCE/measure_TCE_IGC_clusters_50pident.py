@@ -2,7 +2,7 @@ import sys
 
 clstr = sys.argv[1]
 
-def parse_clstr(x,out):
+def parse_clstr(x):
 	mems = []
 	for i in open(x):
 		if i[0] == ">":
@@ -17,13 +17,10 @@ def parse_clstr(x,out):
 				pident = float(i.strip().split('/')[-1].split('%')[0])
 				mems.append(pident)
 	if mems != []:
-		print(min(mems)
+		print(min(mems))
 
 
-parse_clstr(clstr,out)
-
-
-
+parse_clstr(clstr)
 
 
 
