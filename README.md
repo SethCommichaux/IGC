@@ -26,6 +26,7 @@ To evaluate the taxonomic homogeneity within the actual IGC clusters, we aligned
 python coverset.py diamond_file.py
 ```
 
+After running this script, the output has to be manually curated to get rid of redundandancy -- usually multiple strains of the same species or variants of species names.
 
 
 
