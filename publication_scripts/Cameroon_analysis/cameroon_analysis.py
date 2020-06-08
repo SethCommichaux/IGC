@@ -22,10 +22,10 @@ args = parser.parse_args()
 # print("Total number of predicted genes: ",len(predicted_genes))
 
 predicted_clustered_genes = {i.strip().split('\t')[0] for i in open(args.clustered)}
-# print("Total number of predicted genes assigned to IGC clusters: ",len(predicted_clustered_genes))
+print("Total number of predicted genes assigned to IGC clusters: ",len(predicted_clustered_genes))
 
 IGC_clustered_assigned_predicted_genes = {i.strip().split('\t')[1] for i in open(args.clustered)}
-# print("Total number of IGC clusters ssigned to predicted genes: ",len(IGC_clustered_assigned_predicted_genes))
+print("Total number of IGC clusters ssigned to predicted genes: ",len(IGC_clustered_assigned_predicted_genes))
 
 total_num_reads = 49399939
 
@@ -121,8 +121,7 @@ len(IGCC_reads['ucpg'])
 len(set(IGCC_reads['ucpg']))
 
 
-print("Number of reads mapping to predicted genes and IGC: ",len(PGC_reads&IGCC_reads)*2)
-# 11,923,752
+
 
 
 
