@@ -5,13 +5,13 @@ from collections import Counter
 # python analyze_cameroon.py -fastq ERR2619707.fastq -genes PROKKA_07052019.ffn -clustered clustered2IGC.blast -sam_pred_genes_nc ERR2619707.all_genes.sam -sam_pred_genes_cord ERR2619707.all_genes.concordant.sam -sam_igc_nc ERR2619707.igc.sam -sam_igc_cord ERR2619707.igc.concordant.sam
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-fastq", help="fastq file of Cameroon raw reads")
-parser.add_argument("-genes", help="fasta file of predicted genes")
-parser.add_argument("-clustered", help="file of predicted genes assigned to IGC clusters")
-parser.add_argument("-sam_pred_genes_nc", help="sam file (not requiring concordant mappings) for reads mapped to predicted genes")
-parser.add_argument("-sam_pred_genes_cord", help="sam file (requiring concordant mappings) for reads mapped to predicted genes")
-parser.add_argument("-sam_igc_nc", help="sam file (not requiring concordant mappings) for reads mapped to IGC")
-parser.add_argument("-sam_igc_cord", help="sam file (requiring concordant mappings) for reads mapped to IGC")
+parser.add_argument("-fastq", help="fastq file of Cameroon raw reads i.e. ERR2619707.fastq")
+parser.add_argument("-genes", help="fasta file of predicted genes i.e. cameroon_predicted_genes.fasta")
+parser.add_argument("-clustered", help="file of predicted genes assigned to IGC clusters i.e. clustered2IGC.blast")
+parser.add_argument("-sam_pred_genes_nc", help="sam file (not requiring concordant mappings) for reads mapped to predicted genes i.e. ERR2619707.all_genes.sam")
+parser.add_argument("-sam_pred_genes_cord", help="sam file (requiring concordant mappings) for reads mapped to predicted genes i.e. ERR2619707.all_genes.concordant.sam")
+parser.add_argument("-sam_igc_nc", help="sam file (not requiring concordant mappings) for reads mapped to IGC i.e. ERR2619707.igc.sam")
+parser.add_argument("-sam_igc_cord", help="sam file (requiring concordant mappings) for reads mapped to IGC i.e. ERR2619707.igc.concordant.sam")
 args = parser.parse_args()
 
 
@@ -79,14 +79,9 @@ for k,v in Counter(flags).items():
 
 
 ####### Concordant read-mapping analysis ###########################
-# predicted_clustered_genes = {i.strip().split('\t')[0] for i in open('clustered2IGC.blast')}
-# IGC_clustered_assigned_predicted_genes = {i.strip().split('\t')[1] for i in open('clustered2IGC.blast')}
 
-# pred_genes_c = args.sam_pred_genes_cord
-# igc_c = args.sam_igc_cord
-
-pred_genes_c = 'ERR2619707.all_genes.concordant.sam'
-igc_c = 'ERR2619707.igc.concordant.sam'
+pred_genes_c = args.sam_pred_genes_cord
+igc_c = args.sam_igc_cord
 
 PGC_reads = {'cpg':[],'ucpg':[]}
 clustered_reads = {}
