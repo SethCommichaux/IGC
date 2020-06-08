@@ -27,7 +27,7 @@ print("Total number of predicted genes assigned to IGC clusters: ",len(predicted
 IGC_clustered_assigned_predicted_genes = {i.strip().split('\t')[1] for i in open(args.clustered)}
 print("Total number of IGC clusters assigned to predicted genes: ",len(IGC_clustered_assigned_predicted_genes))
 
-total_num_reads = 49399939
+total_num_reads = 49399939.0
 
 print('''\n ####### Read mapping to predicted genes analysis: non-concordant ############# ''')
 reads = []
@@ -45,7 +45,7 @@ for i in open(args.sam_pred_genes_nc):
 		genes.append(gene)
 
 
-print("Total number reads mapped to predicted genes (concordant mappings not required): ",len(reads))
+print("Total number reads mapped to predicted genes (concordant mappings not required): ",len(reads),len(reads)/total_num_reads)
 print(len(set(reads)))
 print("Total number of predicted genes that reads mapped to (concordant mappings not required): ",len(set(genes)))
 
@@ -69,8 +69,8 @@ for i in open(args.sam_igc_nc):
 		reads.append(read)
 		genes.append(gene)
 
-print("Number reads mapped to IGC genes: ",len(reads))
-print(len(set(reads)))
+print("Number reads mapped to IGC genes: ",len(reads),len(reads)/total_num_reads)
+# print(len(set(reads)))
 print("Number IGC clusters that reads mapped to : ",len(set(genes)))
 
 print('Sam file flag counts:')
@@ -113,9 +113,11 @@ for i in open(igc_c):
 	elif read in unclustered_reads:
 		IGCC_reads['ucpg'].append(gene)
 
-print(len(IGCC_reads['cpg']))
-print(len(set(IGCC_reads['cpg'])))
-print(len(IGCC_reads['other']))
-print(len(set(IGCC_reads['other'])))
-print(len(IGCC_reads['ucpg']))
-print(len(set(IGCC_reads['ucpg'])))
+total_num_reads
+
+print(len(IGCC_reads['cpg']),len(IGCC_reads['cpg'])/total_num_reads)
+print(len(set(IGCC_reads['cpg'])),len(set(IGCC_reads['cpg']))/total_num_reads)
+print(len(IGCC_reads['other']),len(IGCC_reads['other'])/total_num_reads)
+print(len(set(IGCC_reads['other'])),len(set(IGCC_reads['other']))/total_num_reads)
+print(len(IGCC_reads['ucpg']),len(IGCC_reads['ucpg'])/total_num_reads)
+print(len(set(IGCC_reads['ucpg'])),len(set(IGCC_reads['ucpg']))/total_num_reads)
