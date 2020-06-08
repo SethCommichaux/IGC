@@ -8,9 +8,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-fastq", help="fastq file of Cameroon raw reads i.e. ERR2619707.fastq")
 parser.add_argument("-genes", help="fasta file of predicted genes i.e. cameroon_predicted_genes.fasta")
 parser.add_argument("-clustered", help="file of predicted genes assigned to IGC clusters i.e. clustered2IGC.blast")
-parser.add_argument("-sam_pred_genes_nc", help="sam file (not requiring concordant mappings) for reads mapped to predicted genes i.e. ERR2619707.all_genes.sam")
 parser.add_argument("-sam_pred_genes_cord", help="sam file (requiring concordant mappings) for reads mapped to predicted genes i.e. ERR2619707.all_genes.concordant.sam")
-parser.add_argument("-sam_igc_nc", help="sam file (not requiring concordant mappings) for reads mapped to IGC i.e. ERR2619707.igc.sam")
 parser.add_argument("-sam_igc_cord", help="sam file (requiring concordant mappings) for reads mapped to IGC i.e. ERR2619707.igc.concordant.sam")
 args = parser.parse_args()
 
@@ -25,7 +23,7 @@ predicted_clustered_genes = {i.strip().split('\t')[0] for i in open(args.cluster
 print("Total number of predicted genes assigned to IGC clusters: ",len(predicted_clustered_genes))
 
 IGC_clustered_assigned_predicted_genes = {i.strip().split('\t')[1] for i in open(args.clustered)}
-print("Total number of IGC clusters ssigned to predicted genes: ",len(IGC_clustered_assigned_predicted_genes))
+print("Total number of IGC clusters assigned to predicted genes: ",len(IGC_clustered_assigned_predicted_genes))
 
 total_num_reads = 49399939
 
