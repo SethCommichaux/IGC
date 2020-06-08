@@ -1,9 +1,8 @@
 # A critical analysis of the IGC gene catalog
-The Integrated Gene Catalog (IGC) is a set of ~9.8 million reference genes from the human gut microbiome. Here, we provide data and code used in our analysis. We focus on both the approach used to construct this catalog and on the effectiveness of the IGC when used as a reference for microbiome studies. Our results highlight important limitations of the approach used to construct the IGC, and call into question the broad usefulness of gene catalogs more generally.
+The Integrated Gene Catalog (IGC) is a set of ~9.8 million reference genes from the human gut microbiome. Here, we provide the data and code used for our analysis. We focus on both the approach used to construct this catalog and the effectiveness of the IGC when used as a reference for microbiome studies. Our results highlight important limitations of the approach used to construct the IGC and call into question the broad usefulness of gene catalogs more generally.
 
 ## Download IGC data 
-We downloaded [data](http://gigadb.org/dataset/100064) provided by authors of the IGC. It has catalogs for the IGC, AGC, CGC, EGC, and SPGC. It also provides information about the metagenomic samples used to construct these catalogs. 
-and identifying the cluster members of IGC representatives
+We downloaded the [data](http://gigadb.org/dataset/100064) provided by the authors of the IGC. It has catalogs for the IGC, AGC, CGC, EGC, and SPGC. It also provides information about the metagenomic samples used to construct those catalogs, the predicted ORF's and the gene clustering output files which were used to identify the cluster members of all IGC representatives.
 
 ## Associating gene sequences from all samples to the IGC cluster representative
 
