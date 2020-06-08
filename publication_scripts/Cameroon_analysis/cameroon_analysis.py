@@ -115,9 +115,9 @@ for i in open(igc_c):
 
 total_num_reads
 
-print(len(IGCC_reads['cpg']),len(IGCC_reads['cpg'])/total_num_reads)
-print(len(set(IGCC_reads['cpg'])),len(set(IGCC_reads['cpg']))/total_num_reads)
-print(len(IGCC_reads['other']),len(IGCC_reads['other'])/total_num_reads)
-print(len(set(IGCC_reads['other'])),len(set(IGCC_reads['other']))/total_num_reads)
-print(len(IGCC_reads['ucpg']),len(IGCC_reads['ucpg'])/total_num_reads)
-print(len(set(IGCC_reads['ucpg'])),len(set(IGCC_reads['ucpg']))/total_num_reads)
+print("Reads mapped to IGC clusters corresponding to clustered predicted genes: ",len(IGCC_reads['cpg']),len(IGCC_reads['cpg'])/total_num_reads)
+print("Number of IGC clusters corresponding to clustered predicted genes with mapped reads: ",len(set(IGCC_reads['cpg'])),len(set(IGCC_reads['cpg']))/total_num_reads)
+print("Reads mapped to clustered predicted genes and genes other than corresponding IGC genes: ",len(IGCC_reads['other']),len(IGCC_reads['other'])/total_num_reads)
+print("Number of IGC clusters with mapped reads from clustered predicted genes but not corresponding IGC genes: ",len(set(IGCC_reads['other'])),len(set(IGCC_reads['other']))/total_num_reads)
+print("Reads mapped to IGC clusters and unclustered predicted genes: ",len(IGCC_reads['ucpg']),len(IGCC_reads['ucpg'])/total_num_reads)
+print("Number of IGC clusters with mapped reads from unclustered predicted genes: ",len(set(IGCC_reads['ucpg'])),len(set(IGCC_reads['ucpg']))/total_num_reads)
