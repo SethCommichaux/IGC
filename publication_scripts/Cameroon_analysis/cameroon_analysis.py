@@ -45,9 +45,9 @@ for i in open(args.sam_pred_genes_nc):
 		genes.append(gene)
 
 
-print("Number reads concordantly mapped to predicted genes: ",len(reads))
+print("Total number reads mapped to predicted genes (concordant mappings not required): ",len(reads))
 print(len(set(reads)))
-print("Number predicted genes that reads concordantly mapped to : ",len(set(genes)))
+print("Total number of predicted genes that reads mapped to (concordant mappings not required): ",len(set(genes)))
 
 
 print('Sam file flag counts:')
