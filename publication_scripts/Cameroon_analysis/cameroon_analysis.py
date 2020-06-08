@@ -46,7 +46,7 @@ for i in open(args.sam_pred_genes_nc):
 
 
 print("Total number reads mapped to predicted genes (concordant mappings not required): ",len(reads),len(reads)/total_num_reads)
-print(len(set(reads)))
+# print(len(set(reads)))
 print("Total number of predicted genes that reads mapped to (concordant mappings not required): ",len(set(genes)))
 
 
