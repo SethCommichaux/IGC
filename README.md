@@ -53,7 +53,7 @@ We also aligned Illumina (100nt) dataset to the SPGC using bowtie2 for the Visib
 ```bash
 bowtie2-align-l --no-unal --no-head -x SPGC_index  -U reads.fa -S map2Spgc.sam --threads 8
 ```
-## Read Mapping statistics and Gene Abundance profiles
+## Read mapping statistics and gene abundance profiles
 For all three simulated datasets, we computed read mapping statistics for the three mapping tools - BLAST, BOWTIE2, and BWA-MEM.
 - Number of reads mapping
 - Number of reads uniquely mapping
