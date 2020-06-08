@@ -6,13 +6,7 @@ We downloaded the [data](http://gigadb.org/dataset/100064) provided by the autho
 
 ## Associating gene sequences from all samples to the IGC cluster representative
 
-The IGC provides the representative sequences from gene clustering as a reference database. For our analysis, however, we needed all the cluster members that clustered to their representative sequences. These relationships can be determined from the CD-Hit clustering output files (i.e. AGC.clstr, EGC.clst, CGC.clstr, SPGC.clstr, 3CGC.clstr and IGC.clstr) using the script trace_cluster_generations.py run from a directory where all of the \*clstr files are.
-
-```
-python trace_cluster_generations.py
-```
-This script creates two files: 1) edge_list.txt, which provides all representative-redundant sequence clustering relationships in the IGC; 2) adjacency_list.txt, which provides an adjacency list for cluster membership in the IGC.
-### The edge_list and adjacency_list is not clear what they are supposed to mean by their description
+The IGC provides the representative sequences from gene clustering as a reference database. For our analysis, however, we needed all the cluster members that clustered to their representative sequences. These relationships can be determined from the CD-Hit clustering output files (i.e. AGC.clstr, EGC.clst, CGC.clstr, SPGC.clstr, 3CGC.clstr and IGC.clstr). We provide the file IGCcluster_of_clusters.txt which contains each IGC cluster representative (first gene per line) and its cluster members (all genes following the first per line).
 
 ## Increase in cluster diameter due to multiple rounds of clustering - *Transitive Clustering Error* 
 In construction of a catalog, genes from metagenome samples are clustered together based on similarity in order to remove redundancy due to fragmentary data, sequencing errors, or small strain-level variants. IGC was constructed with multiple sequential rounds of clustering to handle the scale of such data. However, the multi-round process yields clusters with a (much) wider diameter. We call this methodological error *transitive clustering error* which occurs when different gene catalogs are sequentially clustered.
