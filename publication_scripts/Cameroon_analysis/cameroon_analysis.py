@@ -8,7 +8,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-fastq", help="fastq file of Cameroon raw reads i.e. ERR2619707.fastq")
 parser.add_argument("-genes", help="fasta file of predicted genes i.e. cameroon_predicted_genes.fasta")
 parser.add_argument("-clustered", help="file of predicted genes assigned to IGC clusters i.e. clustered2IGC.blast")
+parser.add_argument("-sam_pred_genes_nc", help="sam file (not requiring concordant mappings) for reads mapped to predicted genes i.e. ERR2619707.all_genes.sam")
 parser.add_argument("-sam_pred_genes_cord", help="sam file (requiring concordant mappings) for reads mapped to predicted genes i.e. ERR2619707.all_genes.concordant.sam")
+parser.add_argument("-sam_igc_nc", help="sam file (not requiring concordant mappings) for reads mapped to IGC i.e. ERR2619707.igc.sam")
 parser.add_argument("-sam_igc_cord", help="sam file (requiring concordant mappings) for reads mapped to IGC i.e. ERR2619707.igc.concordant.sam")
 args = parser.parse_args()
 
@@ -43,9 +45,9 @@ for i in open(args.sam_pred_genes_nc):
 		genes.append(gene)
 
 
-print("Number reads mapped to predicted genes: ",len(reads))
+print("Number reads concordantly mapped to predicted genes: ",len(reads))
 print(len(set(reads)))
-print("Number predicted genes that reads mapped to : ",len(set(genes)))
+print("Number predicted genes that reads concordantly mapped to : ",len(set(genes)))
 
 
 print('Sam file flag counts:')
