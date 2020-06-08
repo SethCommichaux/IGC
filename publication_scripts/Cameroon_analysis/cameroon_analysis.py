@@ -54,7 +54,7 @@ print('Sam file flag counts:')
 for k,v in Counter(flags).items():
 	print(k,v)
 
-print('''\n ####### Read mapping to IGC  analysis: non-concordant ############# ''')
+print('''\n ####### Read mapping to IGC analysis: non-concordant ############# ''')
 reads = []
 genes = []
 flags = []
