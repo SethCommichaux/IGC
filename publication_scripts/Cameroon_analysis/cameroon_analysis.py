@@ -29,7 +29,7 @@ print("Total number of IGC clusters assigned to predicted genes: ",len(IGC_clust
 
 total_num_reads = 49399939
 
-####### Read mapping to predicted genes analysis: non-concordant #############
+print(''' ####### Read mapping to predicted genes analysis: non-concordant ############# ''')
 reads = []
 genes = []
 flags = []
@@ -54,7 +54,7 @@ print('Sam file flag counts:')
 for k,v in Counter(flags).items():
 	print(k,v)
 
-####### Read mapping to IGC  analysis: non-concordant #############
+print(''' ####### Read mapping to IGC  analysis: non-concordant ############# ''')
 reads = []
 genes = []
 flags = []
@@ -113,51 +113,9 @@ for i in open(igc_c):
 	elif read in unclustered_reads:
 		IGCC_reads['ucpg'].append(gene)
 
-len(IGCC_reads['cpg'])
-len(set(IGCC_reads['cpg']))
-len(IGCC_reads['other'])
-len(set(IGCC_reads['other']))
-len(IGCC_reads['ucpg'])
-len(set(IGCC_reads['ucpg']))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(len(IGCC_reads['cpg']))
+print(len(set(IGCC_reads['cpg'])))
+print(len(IGCC_reads['other']))
+print(len(set(IGCC_reads['other'])))
+print(len(IGCC_reads['ucpg']))
+print(len(set(IGCC_reads['ucpg'])))
