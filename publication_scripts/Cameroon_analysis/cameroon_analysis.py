@@ -29,7 +29,7 @@ print("Total number of IGC clusters assigned to predicted genes: ",len(IGC_clust
 
 total_num_reads = 49399939
 
-print(''' ####### Read mapping to predicted genes analysis: non-concordant ############# ''')
+print('''\n ####### Read mapping to predicted genes analysis: non-concordant ############# ''')
 reads = []
 genes = []
 flags = []
@@ -54,7 +54,7 @@ print('Sam file flag counts:')
 for k,v in Counter(flags).items():
 	print(k,v)
 
-print(''' ####### Read mapping to IGC  analysis: non-concordant ############# ''')
+print('''\n ####### Read mapping to IGC  analysis: non-concordant ############# ''')
 reads = []
 genes = []
 flags = []
@@ -78,7 +78,7 @@ for k,v in Counter(flags).items():
 	print(k,v)
 
 
-####### Concordant read-mapping analysis ###########################
+print('''\n ####### Concordant read-mapping analysis ########################### ''')
 
 pred_genes_c = args.sam_pred_genes_cord
 igc_c = args.sam_igc_cord
