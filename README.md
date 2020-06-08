@@ -36,7 +36,7 @@ The output has to be manually curated to get rid of redundandancy -- usually mul
 We also found that sequences from individual species may be broken up across multiple clusters. We analyzed 214,599 Salmonella enterica genomes obtained from the GenomeTrakr database. Within the 1,152 core genes (genes found in all of the analyzed strains) the average sequence identity between homologous genes was just 86.2% which is much lower than the 95% cutoff used by the IGC. In fact, only 25 core genes exceeded the 95% threshold and would have been clustered properly by the IGC. 
 
 ## Simulated data and mapping to IGC and SPGC
-We simulated three datasets from [507 genomes](provide_link) used in costruction of the SPGC using [ART sequence simulator](https://doi.org/10.1093/bioinformatics/btr708). Two samples were simulated as single-end Illumina reads of 100nt and 250 nt, respectively. We simulated 1 sample with 454 sequencing profile. 
+We simulated three datasets from [507 genomes](https://github.com/SethCommichaux/IGC/blob/master/data/genomes_from_SPGC.txt/) used in costruction of the SPGC using [ART sequence simulator](https://doi.org/10.1093/bioinformatics/btr708). Two samples were simulated as single-end Illumina reads of 100nt and 250 nt, respectively. We simulated 1 sample with 454 sequencing profile. 
 ```bash
 art_illumina -ss HS20 -l 100 -f 5 -i SPGC_genomes.fa -o Illumina_100_reads
 art_illumina -ss MSv3  -l 250 -f 5 -i SPGC_genomes.fa -o Illumina_250_reads 
