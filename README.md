@@ -46,7 +46,8 @@ We also aligned Illumina (100nt) dataset to the SPGC using bowtie2 for the Visib
 ```bash
 bowtie2-align-l --no-unal --no-head -x SPGC_index  -U reads.fa -S map2Spgc.sam --threads 8
 ```
-## Visibility of Species in gene catalog
+## Visibility of Species in the SPGC
+The SPGC was one of the precursor gene catalogs used to create the IGC. It is composed of the reference genes from 511 reference genomes from species known to occur in the human gut. The fate of sequences (i.e. whether they become representative sequences or cluster members) after gene clustering can be determined from the CD-HIT output file SPGC.clstr. Each identifier is prefixed by the NCBI taxonomic ID of the reference genome. We aggregated these results into tables at the species level (SPGC_hidden_genes.summary, SPGC_hidden_genes.summary.matrix), providing the pairwise statistics for the genes of species that effectively render the genes of other species invisible in the gene catalog.
 
 ## Read mapping statistics and gene abundance profiles
 For all three simulated datasets, we computed read mapping statistics for the three mapping tools - BLAST, BOWTIE2, and BWA-MEM.
