@@ -43,6 +43,16 @@ art_illumina -ss HS20 -l 100 -f 5 -i SPGC_genomes.fa -o Illumina_100_reads
 art_illumina -ss MSv3  -l 250 -f 5 -i SPGC_genomes.fa -o Illumina_250_reads 
 art_454 -M -s -a -d -r 32 SPGC_genomes.fa  454_reads 5
 ```
+We aligned reads from these dataset to the IGC using BLAST, BOWTIE2, and BWA-MEM. 
+```bash
+bowtie2 -x IGC_index reads.fq -p 8 | samtools view -bS - > reads.bam
+blastn -query reads.fa -db IGC_index -out reads_blast.out  -perc_identity 95 -outfmt " 6 qaccver saccver pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen " 
+bwa mem -a -t 12 IGC_index.fa reads.fa  > reads.sam
+```
+We also aligned Illumina (100nt) dataset to the SPGC using bowtie2 for the Visibility of Species analysis in the paper. 
+```bash
+bowtie2-align-l --no-unal --no-head -x SPGC_index  -U reads.fa -S map2Spgc.sam --threads 8
+```
 
 
 
