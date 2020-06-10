@@ -62,7 +62,7 @@ To investigate how read mapping artefacts and species not represented in the cat
 ```
 fastq-dump --split-3 ERR2619707
 ```
-We modified the read identifiers so the forward and reverse reads were identifiable in the Bowtie2 output (e.g. read ERR2619707.3 from the forward reads fastq file was modified to ERR2619707.1.3). The reads were assembled with MegaHit and genes were predicted using Prokka using default settings for both. Reads were then mapped with Bowtie2 to the IGC and the predicted genes under two different conditions.
+We modified the read identifiers so the forward and reverse reads were identifiable in the Bowtie2 output (e.g. read ERR2619707.3 from the forward reads fastq file was modified to ERR2619707.1.3). The reads were assembled with MegaHit and genes were predicted using Prokka using default settings for both. The predicted genes that could be assigned to IGC clusters (i.e. had a best BLASTN hit over ≥95% identity and ≥90% query coverage to an IGC cluster) became the Clustered Predicted Genes. The predicted genes that couldn't be assigned to an IGC cluster became the Unclustered Predicted Genes. Reads were then mapped with Bowtie2 to the IGC and the predicted genes under two different conditions.
 
 1) Not requiring concordant mapping
 ```
@@ -79,3 +79,4 @@ Read mapping statistics were then gathered and output with analyze_cameroon.py
 python analyze_cameroon.py -fastq ERR2619707.fastq -genes predicted_genes.fasta -clustered clustered2IGC.blast -sam_pred_genes_nc ERR2619707.all_genes.sam -sam_pred_genes_cord ERR2619707.all_genes.concordant.sam -sam_igc_nc ERR2619707.igc.sam -sam_igc_cord ERR2619707.igc.concordant.sam
 
 ```
+The data files for this analysis can be found [here]().
