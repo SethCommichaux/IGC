@@ -67,13 +67,11 @@ To investigate how read mapping artefacts and species not represented in the cat
 bowtie2 -x predicted_genes_index -U ERR2619707.fastq -S ERR2619707.all_genes.sam
 bowtie2 -x IGC_genes_index -U ERR2619707.fastq -S ERR2619707.igc.sam
 ```
-
 2) requiring concordant mapping
 ```
-bowtie2 -x predicted_genes_index -1 ERR2619707_1.fastq -2 ERR2619707_2.fastq -S ERR2619707.all_genes.concordant.sam
-bowtie2 -x IGC_genes_index -1 ERR2619707_1.fastq -2 ERR2619707_2.fastq -S ERR2619707.igc.concordant.sam
+bowtie2 --no-mixed --no-discordant -x predicted_genes_index -1 ERR2619707_1.fastq -2 ERR2619707_2.fastq -S ERR2619707.all_genes.concordant.sam
+bowtie2 --no-mixed --no-discordant -x IGC_genes_index -1 ERR2619707_1.fastq -2 ERR2619707_2.fastq -S ERR2619707.igc.concordant.sam
 ```
-
 Read mapping statistics were then gathered and output with analyze_cameroon.py
 ```
 python analyze_cameroon.py -fastq ERR2619707.fastq -genes PROKKA_07052019.ffn -clustered clustered2IGC.blast -sam_pred_genes_nc ERR2619707.all_genes.sam -sam_pred_genes_cord ERR2619707.all_genes.concordant.sam -sam_igc_nc ERR2619707.igc.sam -sam_igc_cord ERR2619707.igc.concordant.sam
