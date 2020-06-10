@@ -77,6 +77,5 @@ bowtie2 --no-mixed --no-discordant -x IGC_genes_index -1 ERR2619707_1.fastq -2 E
 Read mapping statistics were then gathered and output with analyze_cameroon.py
 ```
 python analyze_cameroon.py -fastq ERR2619707.fastq -genes predicted_genes.fasta -clustered clustered2IGC.blast -sam_pred_genes_nc ERR2619707.all_genes.sam -sam_pred_genes_cord ERR2619707.all_genes.concordant.sam -sam_igc_nc ERR2619707.igc.sam -sam_igc_cord ERR2619707.igc.concordant.sam
-
 ```
 The data files necessary to run this command can be downloaded using the link in the Download IGC data section.
